@@ -6,4 +6,5 @@
 * [HTML头部](html_tou_bu.md)
 * [页面模板控制](ye_mian_mo_ban_kong_zhi.md)
 * [Body onload代码](body_onloaddai_ma.md)
+* 主页面模板
 
