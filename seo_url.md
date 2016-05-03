@@ -37,7 +37,7 @@ function install_settings(){
 } # end class
 ```
 
-在admin/includes/languages/<language>.php
+在 `admin/includes/languages/<language>.php`
 在 `define('BOX_CONFIGURATION_EZPAGES_SETTINGS', 'EZ-Pages Settings');` 之下加入 `define('BOX_CONFIGURATION_SEO_URL', 'SEO URL');`
 
 执行SQL加入菜单

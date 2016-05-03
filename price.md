@@ -5,35 +5,35 @@
 1. 基础价 `zen_get_products_base_price($products_id)`
 2. 特价 `zen_get_products_special_price($products_id, true);`
 
-特价会查询表Specials，要求status=1,得到specials_new_products_price，当产品编号前四位为GIFT时，直接采用specials_new_products_price
+    特价会查询表Specials，要求status=1,得到specials_new_products_price，当产品编号前四位为GIFT时，直接采用specials_new_products_price
 
 3. 售价 `zen_get_products_special_price($products_id, false);`
 
-当第二参数为false时，在计算完specials_new_products_price后，查询products表的master_categories_id字段，再查询salemaker_sales表，查询条件有：
+    当第二参数为false时，在计算完specials_new_products_price后，查询products表的master_categories_id字段，再查询salemaker_sales表，查询条件有：
 
-- Sale_categories_all 存在master_categories_id
-- sale_status = '1'  状态开启
-- (sale_date_start <= now() or sale_date_start = '0001-01-01')  开始时间
-- (sale_date_end >= now() or sale_date_end = '0001-01-01')  结束时间
-- (sale_pricerange_from <= '" . $product_price . "' or sale_pricerange_from = '0')  价格范围
-- (sale_pricerange_to >= '" . $product_price . "' or sale_pricerange_to = '0')
+    - Sale_categories_all 存在master_categories_id
+    - sale_status = '1'  状态开启
+    - (sale_date_start <= now() or sale_date_start = '0001-01-01')  开始时间
+    - (sale_date_end >= now() or sale_date_end = '0001-01-01')  结束时间
+    - (sale_pricerange_from <= '" . $product_price . "' or sale_pricerange_from = '0')  价格范围
+    - (sale_pricerange_to >= '" . $product_price . "' or sale_pricerange_to = '0')
 
-无满足条件的记录时，直接返回special_price
+    无满足条件的记录时，直接返回special_price
 
 以下计算会同时以special_price和基础价格两种结果，在最后才会决定采用哪个价格
 
-当sale_deduction_type字段为
+当sale_deduction_type字段为：
 
-0：原价-sale_deduction_value字段值
-1：原价-原价*sale_deduction_value/100
-2：采用sale_deduction_value 作为价格
+- 0：原价-sale_deduction_value字段值
+- 1：原价-原价*sale_deduction_value/100
+- 2：采用sale_deduction_value 作为价格
 
-当sale_specials_condition字段为
+当sale_specials_condition字段为：
 
-0：返回以基础价计算的结果
-1：直接返回特价（未按上述公式计算）
-2：返回特价计算的结果
-默认：返回特价
+- 0：返回以基础价计算的结果
+- 1：直接返回特价（未按上述公式计算）
+- 2：返回特价计算的结果
+- 默认：返回特价
 
 ### 产品属性价格
 
@@ -55,7 +55,9 @@
 
 ### 价格与购买
 
-在shopping_cart.php类的calculate方法里，当product_is_always_free_shipping=1和products_virtual=1时，不会加总产品重量，即产品重量会自动计为0。产品编号以GIFT为前缀也会算入免运费，其中free_shipping_item保存免运费数量，free_shipping_weight保存免运费重量。
+在shopping_cart.php类的calculate方法里，当product_is_always_free_shipping=1和products_virtual=1时，不会加总产品重量，即产品重量会自动计为0。
+
+产品编号以GIFT为前缀也会算入免运费，其中free_shipping_item保存免运费数量，free_shipping_weight保存免运费重量。
 
 ### 数量区间价格
 
@@ -90,6 +92,7 @@ products_quantity_mixed（Product Qty Min/Unit Mix） 代表属性产品数量�
 
 1. 字数计费attributes_price_letters 单个字价格，attributes_price_letters_free免费字数
 2. 按单词计费，attributes_price_words 单个词价格，attributes_price_words_free免费词数
+
 
 - 价格基数： attributes_price_factor,attributes_price_factor_offset，增加费用计算公式：$price/$special_price(当ATTRIBUTES_PRICE_FACTOR_FROM_SPECIAL=1时) * ($factor - $offset)
 - 单次价格基数：attributes_price_factor_onetime，attributes_price_factor_onetime_offset，与价格基数相同，增加公式相同

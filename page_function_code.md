@@ -14,12 +14,12 @@ zencart的页面功能代码集中放置在includes/modules/page/中，每个功
   }
 ```
 
-代码中的$code_page_directory为全局变量，保存当前页面功能代码的文件夹路径，其值应为includes/modules/pages/<page>/。通常上面的代码我们可以看到，只要是以header_php开头，以php为后缀的文件都会被自动加载（模板类的get_template_part方法默认后缀名为php）。
+代码中的$code_page_directory为全局变量，保存当前页面功能代码的文件夹路径，其值应为 `includes/modules/pages/<page>/` 。通常上面的代码我们可以看到，只要是以header_php开头，以php为后缀的文件都会被自动加载（模板类的get_template_part方法默认后缀名为php）。
 
 
 ## Page Not Found 页面未找到
 
-> zencart会自动检查请求当前页面是否拥有功能目录，功能目录默认为includes/modules/pages/<page>文件夹，如果此目录不存在，则被认定为Page Not Found。
+> zencart会自动检查请求当前页面是否拥有功能目录，功能目录默认为 `includes/modules/pages/<page>` 文件夹，如果此目录不存在，则被认定为Page Not Found。
 > 
 > 当出现Page Not Found情况，会根据zencart后台设置出现两种情况。
 > 

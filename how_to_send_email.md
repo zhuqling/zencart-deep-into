@@ -12,9 +12,9 @@ Email目录支持分语言，在email文件夹下新建各语言代码的目录�
 
 模板文件夹的查找顺序为：
 
-1. Emails/email_template_<current_page_base>.html
+1. `Emails/email_template_<current_page_base>.html`
 2. $block['EMAIL_TEMPLATE_FILENAME'].html
-3. Emails/email_template_<module>.html 注：module已经将其中的_extra/_admin删除
+3. `Emails/email_template_<module>.html` 注：module已经将其中的_extra/_admin删除
 4. Emails/email_template_default.html
 
 ## 调试邮件模板

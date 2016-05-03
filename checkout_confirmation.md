@@ -144,17 +144,17 @@ if (isset($$_SESSION['payment']->flagDisablePaymentAddressChange)) {
 当我们需要再次确认时，可以仿照下面的代码来编写，否则可以直接返回false即可。
 
 ```php
-  function confirmation() {
-    $confirmation = array('title' => $this->title . ': ' . $this->cc_card_type,
-                          'fields' => array(array('title' => MODULE_PAYMENT_LINKPOINT_API_TEXT_CREDIT_CARD_OWNER,
-                                                  'field' => $_POST['linkpoint_api_cc_owner']),
-                                            array('title' => MODULE_PAYMENT_LINKPOINT_API_TEXT_CREDIT_CARD_NUMBER,
-                                                  'field' => str_repeat('X', (strlen($this->cc_card_number) - 4)) . substr($this->cc_card_number, -4)),
-                                            array('title' => MODULE_PAYMENT_LINKPOINT_API_TEXT_CREDIT_CARD_EXPIRES,
-                                                  'field' => strftime('%B, %Y', mktime(0,0,0,$_POST['linkpoint_api_cc_expires_month'], 1, '20' . $_POST['linkpoint_api_cc_expires_year'])))));
+function confirmation() {
+  $confirmation = array('title' => $this->title . ': ' . $this->cc_card_type,
+                        'fields' => array(array('title' => MODULE_PAYMENT_LINKPOINT_API_TEXT_CREDIT_CARD_OWNER,
+                                                'field' => $_POST['linkpoint_api_cc_owner']),
+                                          array('title' => MODULE_PAYMENT_LINKPOINT_API_TEXT_CREDIT_CARD_NUMBER,
+                                                'field' => str_repeat('X', (strlen($this->cc_card_number) - 4)) . substr($this->cc_card_number, -4)),
+                                          array('title' => MODULE_PAYMENT_LINKPOINT_API_TEXT_CREDIT_CARD_EXPIRES,
+                                                'field' => strftime('%B, %Y', mktime(0,0,0,$_POST['linkpoint_api_cc_expires_month'], 1, '20' . $_POST['linkpoint_api_cc_expires_year'])))));
 
-    return $confirmation;
-  }
+  return $confirmation;
+}
 ```
 
 付款转向参数，通过隐藏域的方法，向将转向的页面传递参数

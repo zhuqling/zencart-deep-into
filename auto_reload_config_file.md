@@ -12,9 +12,9 @@
 
 其中第一部分<loadPrefix>是标准前缀，此值由全局变量$loadPrefix指定，默认值为config（在includes/application_top.php指定）。
 
-第二部分<userNamed>为用户自定名称。
+第二部分 `<userNamed>` 为用户自定名称。
 
-当<userNamed>为core时，该配置文件为核心配置文件，zencart会第一时间加载此配置文件，然后才加载其它文件。
+当 `<userNamed>` 为core时，该配置文件为核心配置文件，zencart会第一时间加载此配置文件，然后才加载其它文件。
 
 我们接着来说一下$loadPrefix的作用，当我们在处理一些页面或程序时，这些页面都使用相同配置，我们不需要为每个页面分别编写配置，而是通常情况下会将配置分组，划分这些页面使用配置A，那些页面使用配置B，zencart中的$loadPrefix就是起到配置分组的作用。
 

@@ -33,7 +33,7 @@ if (!defined('DIR_WS_EDITORS')) define('DIR_WS_EDITORS', 'editors/');
 
 需下载jQuery版本源文件，解压至editors目录，即cheditor放置在editors/cheditor目录，tinyMCE放置在editors/tiny_mce目录下，zencart已经内置这些编辑器的支持代码，可以先测试使用像这样的网址：http://localhost/web/editors/ckeditor/_samples/index.html或者http://localhost/web/editors/tiny_mce/examples/index.html，
 
-修改文件：includes/languages/<language>/extra_definitions/editors_list.php
+修改文件：`includes/languages/<language>/extra_definitions/editors_list.php`
 添加：
 
 ```php

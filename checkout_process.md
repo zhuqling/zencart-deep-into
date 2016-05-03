@@ -12,17 +12,17 @@ $payment_modules->after_process();
 复位购物车和结算中使用的会话数据
 
 ```php
-  $_SESSION['cart']->reset(true);
+$_SESSION['cart']->reset(true);
 
 // unregister session variables used during checkout
-  unset($_SESSION['sendto']);
-  unset($_SESSION['billto']);
-  unset($_SESSION['shipping']);
-  unset($_SESSION['payment']);
-  unset($_SESSION['comments']);
-  $order_total_modules->clear_posts();//ICW ADDED FOR CREDIT CLASS SYSTEM
+unset($_SESSION['sendto']);
+unset($_SESSION['billto']);
+unset($_SESSION['shipping']);
+unset($_SESSION['payment']);
+unset($_SESSION['comments']);
+$order_total_modules->clear_posts();//ICW ADDED FOR CREDIT CLASS SYSTEM
 转向到付款成功页面
-  zen_redirect(zen_href_link(FILENAME_CHECKOUT_SUCCESS, (isset($_GET['action']) && $_GET['action'] == 'confirm' ? 'action=confirm' : ''), 'SSL'));
+zen_redirect(zen_href_link(FILENAME_CHECKOUT_SUCCESS, (isset($_GET['action']) && $_GET['action'] == 'confirm' ? 'action=confirm' : ''), 'SSL'));
 ```
 
 在checkout_process.php模块中限制多次提交订单，达3次以上将视为恶意提交，将转向到其它页面

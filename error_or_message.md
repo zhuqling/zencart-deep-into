@@ -13,13 +13,13 @@ $messageStack->add('account_password', ENTRY_PASSWORD_NEW_ERROR);
 
 ```php
 if ($messageStack->size('header') > 0) {
-    echo $messageStack->output('header');
-  }
-  if (isset($_GET['error_message']) && zen_not_null($_GET['error_message'])) {
-  echo htmlspecialchars(urldecode($_GET['error_message']));
-  }
-  if (isset($_GET['info_message']) && zen_not_null($_GET['info_message'])) {
-   echo htmlspecialchars($_GET['info_message']);
+echo $messageStack->output('header');
+}
+if (isset($_GET['error_message']) && zen_not_null($_GET['error_message'])) {
+echo htmlspecialchars(urldecode($_GET['error_message']));
+}
+if (isset($_GET['info_message']) && zen_not_null($_GET['info_message'])) {
+echo htmlspecialchars($_GET['info_message']);
 ```
 
 其中header类型的消息将在网页最上方显示。同时$_GET['error_message']和$_GET['info_message']如被指定值时也将显示，$_GET['error_message']定位为错误类型，$_GET['info_message']定位为通知类型。
