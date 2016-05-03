@@ -44,7 +44,7 @@
     * [面包屑](breadcrumb.md)
     * [页面模块](page_module.md)
 * [安全]()
-* [扩展与配置]() 
+* [扩展与配置]()
     * [多图片支持](multiply_image.md)
     * [富文本编辑器](rich_editor.md)
     * [URL SEO优化](seo_url.md)
