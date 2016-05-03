@@ -1,0 +1,6 @@
+# 付款流程
+
+付款流程分5步进行，
+checkout_shipping、checkout_payment、checkout_confirmation、checkout_process、checkout_success；
+
+其中checkout_shipping选择运输方式时可以修改发货地址checkout_shipping_address；checkout_payment选择付款方式时允许修改billing address账号地址checkout_payment_address。
