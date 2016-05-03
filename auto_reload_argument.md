@@ -104,7 +104,7 @@ else
 |  |  | className | 类名 |
 |  |  | [classSession] | 是否SESSION类 |
 |  |  | [checkInstantiated] | 是否检查重复 |
-| 执行变量方法 | objectMethod | objectName	实例名 |
+| 执行变量方法 |  | objectMethod | objectName	实例名 |
 |  |  | methodName | 方法名 |
 
 > 备注：参数加方括号代码可选
